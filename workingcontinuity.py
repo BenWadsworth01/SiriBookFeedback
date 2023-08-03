@@ -2,7 +2,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.widgets import Slider
 
-
 x = np.linspace(0, 2)
 
 fig = plt.figure()
