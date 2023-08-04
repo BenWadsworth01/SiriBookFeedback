@@ -13,16 +13,14 @@ def f(x):
 def finverse(x):
     return np.exp(x)-1
 
-ax.plot(x, f(x))
 eps = 0.2
 
 axt = plt.axes([0.2, 0.025, 0.5, 0.02])
-eps_slide = Slider(axt, 'eps', 0.01, 0.4, valstep = 0.01, valinit = 0.2)
+eps_slide = Slider(axt, '\u03B5', 0.01, 0.4, valstep = 0.01, valinit = eps)
 
 def update(val):
     eps = eps_slide.val
     ax.clear()
-    ax.plot(x, f(x))
     y = f(x)
     x0 = 1
     y0 = f(x0)
@@ -40,7 +38,7 @@ def update(val):
     for X in vertical:
         ax.axvline(x = X, color= 'c', linestyle = ':')
         
-    delta= min(abs(x0-x0p),abs(x0-x0m))
+    delta = min(abs(x0-x0p),abs(x0-x0m))
     
     ax.set_title(f'Given \u03B5 = {eps:.2}, found \u03B4 = {delta:.4}')
         
